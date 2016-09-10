@@ -53,12 +53,12 @@ public class ModuleService<T extends Entity> implements BasicService<T>
     return _dao.queryAll(klass);
   }
 
-  public T add(Object o) throws Exception
+  public T add(Object o)
   {
     return (T) _dao.add((T)o);
   }
 
-  public T save(Object o) throws Exception
+  public T save(Object o)
   {
     if (!contains(o))
     {
@@ -85,6 +85,10 @@ public class ModuleService<T extends Entity> implements BasicService<T>
   public Dao<T> getDao()
   {
     return _dao;
+  }
+
+  public void setDao(Dao dao) {
+    _dao = dao;
   }
 
   public boolean contains(Object o)

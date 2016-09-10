@@ -44,7 +44,7 @@ public class Module<T>
 
 //	public abstract Dao<T> getDao();
 
-	public Controle getControl(ViewCreator vc)
+	public Controle<T> getControl(ViewCreator vc)
 	{
 		return new Controle<T>(this, vc, _rootComp);
 	}

@@ -70,6 +70,12 @@ public class ListView<T> extends Listbox
     load();
   }
 
+  public void remove(T item)
+  {
+    _listModel.remove(item);
+    _list.remove(item);
+  }
+
   public void filter(String input) throws Exception
   {
     _filterInput = input;
@@ -94,22 +100,11 @@ public class ListView<T> extends Listbox
     }
     if (!newList.isEmpty())
     {
-      _listModelFilter = new ListModelList<T>(newList);
-      _listModelFilter.setMultiple(true);
-      setModel(_listModelFilter);
+      _listModel= new ListModelList<T>(newList);
+      _listModel.setMultiple(true);
+      setModel(_listModel);
     }
   }
-
-/*
-  public void set(T item)
-  {
-    int i = _listModel.indexOf(item);
-    _listModel.set(i, item);
-    ListModelList<T> model = (ListModelList<T>) getModel();
-    i = model.indexOf(item);
-    model.set(i, item);
-  }
-*/
 
 	public ListModelList<T> getListModel()
 	{

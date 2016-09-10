@@ -150,7 +150,7 @@ public class Controle<T> extends SelectorComposer<Component>
       entity = _selectedObj;
     System.out.println("doDel: "+entity);
     _module.getService().del(entity);
-    _listView.getListModel().remove(entity);
+    _listView.remove((T) entity);
     if (entity.equals(_selectedObj))
     {
       _selectedObj = null;

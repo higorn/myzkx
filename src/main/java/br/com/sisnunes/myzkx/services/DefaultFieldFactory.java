@@ -17,9 +17,9 @@ public class DefaultFieldFactory<T extends Entity> implements FieldFactory
 {
 	private static final String		I18N = "i18n/txt";
 	private ResourceBundle				_txt = ResourceBundle.getBundle(I18N);
-	private ModuleService<T>			_service;
+	private BasicService<T>			_service;
 
-	public DefaultFieldFactory(ModuleService<T> service)
+	public DefaultFieldFactory(BasicService<T> service)
 	{
 		_service = service;
 	}
