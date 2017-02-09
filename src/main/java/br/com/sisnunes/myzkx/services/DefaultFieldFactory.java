@@ -44,6 +44,9 @@ public class DefaultFieldFactory<T extends Entity> implements FieldFactory
 					fld.getField().setFormat(props.format());
 					fld.getField().setWidth(props.width());
 					fld.getField().setRows(props.rows());
+					if (!props.fieldtype().isEmpty()) {
+            fld.getField().setFieldType(props.fieldtype());
+          }
 					fld.getField().setSclass(props.sclass());
 //					fld.getField().setPlaceholder(_txt.getString(props.placeholder()));
 
@@ -82,6 +85,9 @@ public class DefaultFieldFactory<T extends Entity> implements FieldFactory
 		formRow.getField().setWidth(props.width());
 		formRow.getField().setRows(props.rows());
 		formRow.getField().setSclass(props.sclass());
+    if (!props.fieldtype().isEmpty()) {
+      formRow.getField().setFieldType(props.fieldtype());
+    }
 //		field.getField().setPlaceholder(_txt.getString(props.placeholder()));
 
 		return formRow;
